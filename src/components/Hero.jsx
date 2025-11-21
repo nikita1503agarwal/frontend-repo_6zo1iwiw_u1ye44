@@ -22,7 +22,19 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),transparent_60%)]" />
         <div className="absolute top-1/4 -right-24 w-[680px] h-[680px] rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.10),transparent_60%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1440\" height=\"256\" viewBox=\"0 0 1440 256\"><path fill=\"%23e5e7eb\" fill-opacity=\"0.25\" d=\"M0,160L60,170.7C120,181,240,203,360,208C480,213,600,203,720,202.7C840,203,960,213,1080,213.3C1200,213,1320,203,1380,197.3L1440,192L1440,256L1380,256C1320,256,1200,256,1080,256C960,256,840,256,720,256C600,256,480,256,360,256C240,256,120,256,60,256L0,256Z\"/></svg>')] bg-bottom bg-repeat-x opacity-40" />
+        {/* Bottom wave as inline SVG to avoid data-URI parsing issues */}
+        <svg
+          className="absolute inset-x-0 bottom-0 h-64 w-full opacity-40"
+          viewBox="0 0 1440 256"
+          preserveAspectRatio="none"
+          aria-hidden
+        >
+          <path
+            fill="#e5e7eb"
+            fillOpacity="0.25"
+            d="M0,160L60,170.7C120,181,240,203,360,208C480,213,600,203,720,202.7C840,203,960,213,1080,213.3C1200,213,1320,203,1380,197.3L1440,192L1440,256L1380,256C1320,256,1200,256,1080,256C960,256,840,256,720,256C600,256,480,256,360,256C240,256,120,256,60,256L0,256Z"
+          />
+        </svg>
       </div>
 
       <div className="mx-auto max-w-[1140px] px-6 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
